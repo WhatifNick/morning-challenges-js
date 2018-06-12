@@ -15,9 +15,28 @@ map({one: 1, two: 2, three: 3}, (num) => { return num * 3; });
 */
 
 // Your code here!
-const map = () => {
+const map = (arg, func) => {
+  a = [];
+  // if (Array.isArray(arg)) {
+    // for(let i=0; i < arg.length; i++) {
+    //   a.push(arg[i] * 3)
+    // }
+    // arg.forEach( x => {
+    //   a.push(x*3)
+    // })
+  // }
+
+  for(x in arg) {
+   a.push(func(arg[x]))
+  }
+  
+  return a
+  // for (let i=) {
+
+  // }
 }
 
+// console.log(map([1, 3, 4]))
 // Check your solution by running these tests: mocha *this_filename*
 const assert = require('assert');
 
