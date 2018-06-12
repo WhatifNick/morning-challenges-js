@@ -1,15 +1,23 @@
-let convert = (x) => {
+convert = (x, base) => {
   const a = []
 
   for(let i = x; i > 0; i = x) {
-    if((x%12) === 10) {
+    if((x%base) === 10) {
       a.push('A')
-    }else if((x%12) === 11){
+    }else if((x%base) === 11){
       a.push('B')
+    }else if((x%base) === 12){
+      a.push('C')
+    }else if((x%base) === 13){
+      a.push('D')
+    }else if((x%base) === 14){
+      a.push('E')
+    }else if((x%base) === 15){
+      a.push('F')
     }else {
-      a.push(x%12)
+      a.push(x%base)
     }
-    x = Math.floor(x/12)
+    x = Math.floor(x/base)
 
   }
 
@@ -17,29 +25,29 @@ let convert = (x) => {
   return a.reverse().join('')
 }
 
-// convert(562)
-
+// convert(403562, 16)
+//
 const assert = require('assert');
 
 describe('base12converter', () => {
 
   it('convert to base 12', () => {
-    const result = convert(5);
+    const result = convert(5, 12);
     const expected = '5';
     assert.deepEqual(result, expected);
   })
   it('convert to base 12', () => {
-    const result = convert(562);
+    const result = convert(562, 12);
     const expected = '3AA';
     assert.deepEqual(result, expected);
   })
   it('convert to base 12', () => {
-    const result = convert(11);
+    const result = convert(11, 12);
     const expected = 'B';
     assert.deepEqual(result, expected);
   })
   it('convert to base 12', () => {
-    const result = convert(1235);
+    const result = convert(1235, 12);
     const expected = '86B';
     assert.deepEqual(result, expected);
   })

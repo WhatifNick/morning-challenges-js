@@ -30,3 +30,4 @@ describe('Pluck', () => {
     assert.deepEqual(pluck([{'[object Object]': 1}], {}), [1]);
   })
 });
+

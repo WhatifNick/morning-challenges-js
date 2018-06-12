@@ -9,6 +9,7 @@ let convert = (x) => {
   console.log(a.reverse().join())
 }
 
+convert(132)
 
 
 // def convert (x)
@@ -21,5 +22,3 @@ let convert = (x) => {
 //   end
 //   puts result = a.reverse.join
 // end
-
-convert(132)
