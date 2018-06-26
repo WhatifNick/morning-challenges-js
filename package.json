@@ -9,6 +9,7 @@
   "author": "nick",
   "license": "MIT",
   "dependencies": {
+    "chai": "^4.1.2",
     "underscore": "^1.9.0"
   }
 }
